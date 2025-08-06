@@ -10,6 +10,7 @@ export default defineConfig({
 			logo: {
 				src: '/src/assets/colorwheel.webp',
 			},
+			favicon: '/favicon.ico',
 			customCss: [
 				'/src/styles/root.css',
 			],
