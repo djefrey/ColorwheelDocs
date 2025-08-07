@@ -1,0 +1,67 @@
+---
+title: colorwheel.properties
+description: Overview of the colorwheel.properties
+sidebar:
+    label: colorwheel.properties
+    order: 1
+---
+
+### blend
+
+```
+blend.<program> = <off | src dst srcA dstA>
+```
+```
+blend.<program>.<buffer> = <off | src dst srcA dstA>
+```
+
+This property is the same as [Iris' blend property](https://shaders.properties/current/reference/shadersproperties/rendering/#blend).  
+This is kept separate from **shader.properties** to allow users of creating patches without overriding any shaderpack file.
+
+### oit
+
+**• Toggle:**
+
+```
+oit = <true | false>
+```
+```
+oit.<program group> = <true | false>
+```
+
+Enable or disable the OIT system.  
+`program group`: `gbuffers` or `shadow`.  
+
+**• Coefficients Buffers:**
+
+```
+blend.<program group>.coefficientRanks = <rank0>[,rank1][,rank2][,...]
+```
+
+Declares the coefficients ranks.  
+`program group`: `gbuffers` or `shadow`.  
+`rank`: the rank of the coefficients buffer, between 1 and 3.  
+
+**• Accumulation Buffers:**
+
+```
+blend.<program group>.<buffer> = <coeffBufferID | frontmost>
+```
+
+Sets the transparency mode of the accumulate buffer associated with the buffer.   
+`program group`: `gbuffers` or `shadow`.  
+`buffer`: `colortexN` with `gbuffers`, `shadowcolorN` with `shadow`.  
+`coeffBufferID`: the index of the coefficient buffer declared with `coefficientRanks`.  
+
+```
+blend.<program group>.<buffer>.format = <image format>
+```
+
+Sets the texture format for the accumulate buffer associated with the buffer.   
+`program group`: `gbuffers` or `shadow`.  
+`buffer`: `colortexN` with `gbuffers`, `shadowcolorN` with `shadow`.  
+`texture format`: the format of the accumulate buffer [](https://shaders.properties/current/reference/buffers/image_format/#_top).
+
+:::caution[Warning]
+The image format needs to have an alpha channel. 
+:::
