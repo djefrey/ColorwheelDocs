@@ -9,7 +9,7 @@ sidebar:
 The objective of this tutorial is to adapt an already existing shaderpack and make it compatible with Colorwheel.
 
 :::caution[Warning]
-**This tutorial is intended for experienced shaderpack developers.** If you do not have experience in writing a shaderpack, you will likely struggle.
+**This tutorial is intended for experienced shaderpack developers.**
 :::
 
 ### Prerequisites
@@ -17,7 +17,10 @@ The objective of this tutorial is to adapt an already existing shaderpack and ma
 Assuming you are already a shader developer with a working development setup:
 
 - A computer supporting OpenGL 3.3.
-- A shaderpack compatible with Iris with **gbuffers_block** and **shadow** programs.  
-While these programs are not required for Colorwheel compatibility, they serve as solid foundation for building Colorwheel programs.
-- An instance of Minecraft with Iris, Colorwheel and mod(s) providing Flywheel >= 1.0 are required.  
-[Vanillin](https://modrinth.com/mod/flw-vanillin/) and [Create](modrinth.com/mod/create/) will be used for this tutorial.
+- A shaderpack compatible with Iris.  
+- An instance of Minecraft with Iris, Colorwheel and mod(s) providing Flywheel >= 1.0.  
+[Vanillin](https://modrinth.com/mod/flw-vanillin/) and [Create](modrinth.com/mod/create/) will be used for this tutorial.  
+
+:::note
+The [shaderpack](https://github.com/IrisShaders/tutorial-code/tree/main/Your%20First%20Shader/5.%20Fog) from the Iris tutorial will be used for reference. You may find the sources on [GitHub]().  
+:::

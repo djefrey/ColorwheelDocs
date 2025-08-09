@@ -6,11 +6,11 @@ sidebar:
     order: 1
 ---
 
-**Attributes** are per-vertex data. Base values are encoded in the mesh and computed per-instance using the Material's vertex and fog shaders.  
+**Attributes** are per-vertex data. Base values are encoded in the mesh and computed per-instance using the material's vertex and fog shaders.  
 
 ### In/outs
 
-Some attributes are passed to the fragment stage, where they are being used by the Material's fragment and light shaders.
+Some attributes are passed to the fragment stage, where they are being used by the material's fragment and light shaders.
 
 - vertexPos
 - vertexColor
@@ -24,13 +24,13 @@ Some attributes are passed to the fragment stage, where they are being used by t
 In the geometry stage, those attributes are grouped in the interface blocks `clrwl_in[3]` and `clrwl_out`.
 
 :::tip
-Usage of `clrwl_out = clrwl_in[i];` in the geometry stage is recommended to be resilient in case of future updates.
+Usage of `clrwl_out = clrwl_in[i];` in the geometry stage is highly recommended to be resilient in case of future updates.
 :::
 
 ### Remappings
 
 :::danger
-Only the `compatibility` profile is  supported.
+Only the `compatibility` profile is supported.
 :::
 
 Iris Attributes                             | Colorwheel Values

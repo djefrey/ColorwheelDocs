@@ -3,7 +3,7 @@ title: colorwheel.properties
 description: Overview of the colorwheel.properties
 sidebar:
     label: colorwheel.properties
-    order: 1
+    order: 4
 ---
 
 ### blend
@@ -17,6 +17,14 @@ blend.<program>.<buffer> = <off | src dst srcA dstA>
 
 This property is the same as [Iris' blend property](https://shaders.properties/current/reference/shadersproperties/rendering/#blend).  
 This is kept separate from **shader.properties** to allow users of creating patches without overriding any shaderpack file.
+
+### shadow
+
+```
+shadow.enabled = <true | false>
+```
+
+Enable/disable shadows from Flywheel entities, block entities and effects.
 
 ### oit
 
@@ -60,7 +68,7 @@ blend.<program group>.<buffer>.format = <image format>
 Sets the texture format for the accumulate buffer associated with the buffer.   
 `program group`: `gbuffers` or `shadow`.  
 `buffer`: `colortexN` with `gbuffers`, `shadowcolorN` with `shadow`.  
-`texture format`: the format of the accumulate buffer [](https://shaders.properties/current/reference/buffers/image_format/#_top).
+`image format`: the format of the accumulate buffer [](https://shaders.properties/current/reference/buffers/image_format/#_top).
 
 :::caution[Warning]
 The image format needs to have an alpha channel. 
