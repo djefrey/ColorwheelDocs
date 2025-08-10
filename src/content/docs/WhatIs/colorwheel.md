@@ -14,15 +14,14 @@ Colorwheel's extension consists of a set of programs that are merged with Flywhe
 
 ### Differences with Iris/Oculus Flywheel Compat
 
-[Iris/Oculus Flywheel Compat](https://modrinth.com/mod/iris-flw-compat) is an older mod that also makes shaderpacks "compatible" with Flywheel. It does so by editing the **gbuffers_blocks** and the **shadow** programs to insert Flywheel's shader code.
+[Iris/Oculus Flywheel Compat](https://modrinth.com/mod/iris-flw-compat) is an older mod that also makes shaderpacks "compatible" with Flywheel. It does so by generating patches on top of the `gbuffers_blocks` and `shadow` programs to insert Flywheel's shader code.
 
 This approach was reasonable in Flywheel 0.6 (version using by Create 0.5) as Flywheel shaders were very basic (10 lines of codes). However, Flywheel 1.0 (used by Create 6) is way more complex:
 
-- A **Material** system where mod developers can specify how an instance is rendered (blending mode, depth test, overlay usage, lighting usage, etc.)
-- Mod developers may provide custom shader code in the vertex and fragment stages
+- A **material** system where mod developers can specify how an instance is rendered (custom shaders, transparency mode, depth test, overlay usage, etc.)
 - Lighting is computed on the GPU for embedded environments (like Create contraptions)
 - **Order Independant Transparency** (OIT) is used to render correctly translucent geometry
 
 All these features make Flywheel's rendering much more complex. While automated patching may work with forward rendering pipelines (like Complementary), shaderpacks using more advanced techniques (like Bliss) will encounter issues.
 
-This approach is also incompatible with the custom fragment and lighting shaders. It also doesn't work with the OIT system, causing translucent geometry to not render correctly depending on the order. All of  that makes this compatibility mode **partial** at best.
+This approach is also incompatible with the custom fragment and lighting shaders. It also doesn't work with the OIT system, causing translucent geometry to not render correctly depending on the order. All of that makes this compatibility mode **partial** at best.

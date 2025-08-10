@@ -13,4 +13,8 @@ sidebar:
 
 ---
 
-/!\ AO is not separated
+The instance vertex color attribute, equivalent to Iris' [`gl_Color`](https://shaders.properties/current/reference/attributes/vacolor/).
+
+:::caution[Warning]
+The attribute **does not** encode the ambient occlusion and old lighting. Those are computed using `clrwl_computeFragment`.  
+:::

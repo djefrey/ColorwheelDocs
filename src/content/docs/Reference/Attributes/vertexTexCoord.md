@@ -12,3 +12,5 @@ sidebar:
 **Remaps**: `gl_MultiTexCoord0` (as `vec4(clrwl_vertexTexCoord, 0, 1)`)  
 
 ---
+
+The vertex texcoord attribute, equivalent to Iris' [`gl_MultiTexCoord0`](https://shaders.properties/current/reference/attributes/vauv0/).

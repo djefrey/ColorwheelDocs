@@ -19,12 +19,11 @@ Some attributes are passed to the fragment stage, where they are being used by t
 - vertexLight
 - vertexNormal
 - vertexTangent
-- distance
 
 In the geometry stage, those attributes are grouped in the interface blocks `clrwl_in[3]` and `clrwl_out`.
 
 :::tip
-Usage of `clrwl_out = clrwl_in[i];` in the geometry stage is highly recommended to be resilient in case of future updates.
+Usage of `clrwl_out = clrwl_in[i];` when emitting a vertex in the geometry stage is highly recommended to be resilient in case of future updates.
 :::
 
 ### Remappings

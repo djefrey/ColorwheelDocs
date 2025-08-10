@@ -12,3 +12,5 @@ sidebar:
 **Remaps**: `gl_Normal`  
 
 ---
+
+The vertex normal attribute, equivalent to Iris' [`gl_Normal`](https://shaders.properties/current/reference/attributes/vanormal/).

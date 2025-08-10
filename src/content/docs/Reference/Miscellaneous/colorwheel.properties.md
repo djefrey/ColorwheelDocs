@@ -37,7 +37,7 @@ oit = <true | false>
 oit.<program group> = <true | false>
 ```
 
-Enable or disable the OIT system.  
+Enable or disable the OIT.  
 `program group`: `gbuffers` or `shadow`.  
 
 **• Coefficients Buffers:**
@@ -68,7 +68,7 @@ blend.<program group>.<buffer>.format = <image format>
 Sets the texture format for the accumulate buffer associated with the buffer.   
 `program group`: `gbuffers` or `shadow`.  
 `buffer`: `colortexN` with `gbuffers`, `shadowcolorN` with `shadow`.  
-`image format`: the format of the accumulate buffer [](https://shaders.properties/current/reference/buffers/image_format/#_top).
+`image format`: the [image format](https://shaders.properties/current/reference/buffers/image_format/) of the accumulate buffer.
 
 :::caution[Warning]
 The image format needs to have an alpha channel. 

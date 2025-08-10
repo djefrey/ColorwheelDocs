@@ -12,3 +12,5 @@ sidebar:
 **Remaps**: -  
 
 ---
+
+The vertex overlay attribute, equivalent to Iris' [`vaUV1`](https://shaders.properties/current/reference/attributes/vauv1/).

@@ -12,3 +12,5 @@ sidebar:
 **Remaps**: `at_tangent`  
 
 ---
+
+The vertex tangent attribute, equivalent to Iris' [`at_tangent`](https://shaders.properties/current/reference/attributes/at_tangent/).

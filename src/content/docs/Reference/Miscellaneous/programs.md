@@ -35,7 +35,7 @@ Even though missing gbuffers programs fallback to `clrwl_gbuffers`, they retain 
 :::
 
 :::caution[Warning]
-Order Independant blending is more complicated than a simple blending function, refer to the [Order Independant Transparency page](/whatis/oit/)
+Order Independant blending is more complicated than a simple blending mode, refer to the [Order Independant Transparency page](/whatis/oit/).
 :::
 
 ### Rendering Order
