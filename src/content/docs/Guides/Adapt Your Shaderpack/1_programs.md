@@ -36,7 +36,7 @@ Flywheel materials also have shaders that have to be executed in the vertex stag
 
 ### computeFragment
 
-Colorwheel provides a nice wrapper in the form of the [`clrwl_computeFragment`](/reference/miscellaneous/computefragment.md) function. It is defined as follow:
+Colorwheel provides a nice wrapper in the form of the [`clrwl_computeFragment`](/colorwheel/reference/miscellaneous/computefragment.md) function. It is defined as follow:
 ```glsl
 void clrwl_computeFragment(vec4 sampleColor, out vec4 fragColor, out vec2 fragLight, out float ao, out vec4 overlayColor);
 ```
@@ -95,7 +95,7 @@ void main() {
 
 *But wait, how does `clrwl_computeFragment` know about `gl_Color` ?*
 
-In reality, they are more in/outs that just the four declared. The material's shaders all requires values from the vertex stage. As such, some values are automatically sent from the vertex stage to the fragment stage. The detailed list is available on the [Attributes overview](/reference/attributes/overview/#inouts) page.  
+In reality, they are more in/outs that just the four declared. The material's shaders all requires values from the vertex stage. As such, some values are automatically sent from the vertex stage to the fragment stage. The detailed list is available on the [Attributes overview](/colorwheel/reference/attributes/overview/#inouts) page.  
 
 With this fix applied, we can reload the shaderpack and see that the tracks are now properly rendered !
 
@@ -149,4 +149,4 @@ For reference, on my Steam Deck, the performance dropped from an average of 45 f
 
 We are now properly rendering opaque geometries, but Flywheel exposes more [transparency modes](https://github.com/Engine-Room/Flywheel/blob/dc5bc8e64976c69b38abb6965d5cd9033e5a8808/common/src/api/java/dev/engine_room/flywheel/api/material/Transparency.java).  
 
-Colorwheel provides more [programs](/reference/miscellaneous/programs/), one for each transparency mode. If the gbuffers program for a transparency mode doesn't exist, `clrwl_gbuffers` will be used instead while retaining their default blending mode. So make sure that every transparency mode will be rendered properlY.
+Colorwheel provides more [programs](/colorwheel/reference/miscellaneous/programs/), one for each transparency mode. If the gbuffers program for a transparency mode doesn't exist, `clrwl_gbuffers` will be used instead while retaining their default blending mode. So make sure that every transparency mode will be rendered properlY.

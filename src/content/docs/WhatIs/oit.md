@@ -27,7 +27,7 @@ The transmittance-over-depth function is an approximation, with the precision le
 
 ### Configuration
 
-Shaderpack developers can configure the OIT in the [colorwheel.properties](/reference/miscellaneous/colorwheelproperties/#oit) file. By default, this feature is disabled and geometries will be rendered in random order.  
+Shaderpack developers can configure the OIT in the [colorwheel.properties](/colorwheel/reference/miscellaneous/colorwheelproperties/#oit) file. By default, this feature is disabled and geometries will be rendered in random order.  
 
 When enabled, all buffers are treated as **frontmost** by default. This mode do not generate the transmittance-over-depth function, and only the frontmost fragments are displayed (using the depth range generated in the first pass). This mode is useful for buffers storing data that shouldn't be blended (like normals) or for the shadow render pass. 
 

@@ -23,12 +23,12 @@ The issue arises because translucent geometries are not sorted: the red glass is
 The typical solution to this issue is to sort geometries back-to-front relative to the camera, which is the method used by Iris. However, Flywheel does not sort translucent geometries. Instead, it uses Order Independent Transparency (OIT), which, as the name suggests, does not require geometries to be ordered on the CPU first.
 
 :::caution[Warning]
-Before proceding, you **should** read the explanation of [What is Order Independant Transparency ?](/whatis/oit).
+Before proceding, you **should** read the explanation of [What is Order Independant Transparency ?](/colorwheel/colorwheel/whatis/oit).
 :::
 
 ### Setup
 
-By default, OIT is disabled and translucent geometries are rendered in whatever order (this is our current situation). To enable it, we must create the [`colorwheel.properties`](/reference/miscellaneous/colorwheelproperties) file and add the following line:
+By default, OIT is disabled and translucent geometries are rendered in whatever order (this is our current situation). To enable it, we must create the [`colorwheel.properties`](/colorwheel/reference/miscellaneous/colorwheelproperties) file and add the following line:
 
 ```
 oit = true

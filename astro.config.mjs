@@ -4,6 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://djefrey.github.io",
+	base: "/colorwheel",
 	integrations: [
 		starlight({
 			title: 'Colorwheel Docs',
