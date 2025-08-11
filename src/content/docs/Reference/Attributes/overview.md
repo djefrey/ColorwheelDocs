@@ -6,7 +6,7 @@ sidebar:
     order: 1
 ---
 
-**Attributes** are per-vertex data. Base values are encoded in the mesh and computed per-instance using the material's vertex and fog shaders.  
+**Attributes** are per-vertex data. Base values are encoded in the mesh and processed per-instance using the instance shader and the material's vertex shader.  
 
 ### In/outs
 

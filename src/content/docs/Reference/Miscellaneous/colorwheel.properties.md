@@ -15,8 +15,8 @@ blend.<program> = <off | src dst srcA dstA>
 blend.<program>.<buffer> = <off | src dst srcA dstA>
 ```
 
-This property is the same as [Iris' blend property](https://shaders.properties/current/reference/shadersproperties/rendering/#blend).  
-This is kept separate from **shader.properties** to allow users of creating patches without overriding any shaderpack file.
+This property is the same as Iris' [blend property](https://shaders.properties/current/reference/shadersproperties/rendering/#blend).  
+This is kept separate from `shader.properties` to allow users of creating patches without overriding any shaderpack file.
 
 ### shadow
 

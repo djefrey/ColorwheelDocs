@@ -6,4 +6,4 @@ sidebar:
     order: 5
 ---
 
-When Colorwheel is **installed**, `IS_COLORWHEEL` is defined in shaders and properties files. 
+When Colorwheel is **installed**, `HAS_COLORWHEEL` is defined in shaders and properties files. 

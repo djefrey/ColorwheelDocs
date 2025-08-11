@@ -8,9 +8,13 @@ sidebar:
 
 ### Gbuffers
 
-The `clrwl_gbuffers` program is most important one, as Colorwheel will reject any shaderpack without it. You don't have to *reinvent the wheel* to create the program, you may repurpose one of your existing program. In general, the `gbuffers_blocks` program serves as a good foundation. For this tutorial, I'll use the `gbuffers_terrain` program since the reference shaderpack don't have a `gbuffers_blocks` program.  
+The `clrwl_gbuffers` program is most important one, as Colorwheel will reject any shaderpack without it. You don't have to *reinvent the wheel* to create it, you may repurpose one of your existing program. In general, `gbuffers_blocks` serves as a good foundation. For this tutorial, I'll use `gbuffers_terrain` since the reference shaderpack doesn't include `gbuffers_blocks`.  
 
-Let's copy and rename `gbuffers_terrain.vsh` and `gbuffers_terrain.fsh` to `clrwl_gbuffers.vsh` and `clrwl_gbuffers.fsh`, respectively. If we launch the game and select our shaderpack, Colorwheel will no longer complain about our shaderpack being incompatible !  
+:::danger
+Colorwheel programs **must** use the `compatibility` profile.
+:::
+
+Let's copy and rename `gbuffers_terrain.vsh` and `gbuffers_terrain.fsh` to `clrwl_gbuffers.vsh` and `clrwl_gbuffers.fsh` respectively. If we launch the game and select our shaderpack, Colorwheel will no longer complain about our shaderpack being incompatible !  
 
 :::tip
 You can check that Colorwheel is active by running the `/flywheel backend` command. The result should be `colorwheel:instancing`. 
@@ -149,4 +153,4 @@ For reference, on my Steam Deck, the performance dropped from an average of 45 f
 
 We are now properly rendering opaque geometries, but Flywheel exposes more [transparency modes](https://github.com/Engine-Room/Flywheel/blob/dc5bc8e64976c69b38abb6965d5cd9033e5a8808/common/src/api/java/dev/engine_room/flywheel/api/material/Transparency.java).  
 
-Colorwheel provides more [programs](/colorwheel/reference/miscellaneous/programs/), one for each transparency mode. If the gbuffers program for a transparency mode doesn't exist, `clrwl_gbuffers` will be used instead while retaining their default blending mode. So make sure that every transparency mode will be rendered properlY.
+Colorwheel provides more [programs](/colorwheel/reference/miscellaneous/programs/), one for each transparency mode. If the gbuffers program for a transparency mode doesn't exist, `clrwl_gbuffers` will be used instead while retaining their default blending mode. So make sure that every transparency mode will be rendered properly.

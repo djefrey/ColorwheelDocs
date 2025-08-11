@@ -13,7 +13,7 @@ void clrwl_computeFragment(vec4 sampleColor, out vec4 fragColor, out vec2 fragLi
 ```
 
 `sampleColor`: the result obtained from sampling `gtexture`.  
-`fragColor`: the result of `diffuseSample * clrwl_vertexColor`, processed by the material's fragment shader, with ambient occlusion applied.  
+`fragColor`: the result of `sampleColor * clrwl_vertexColor`, processed by the material's fragment shader, with ambient occlusion applied.  
 `fragLight`: the final lightmap value, with values ranging from `0.03125` to `0.96875`.  
 `ao`: the ambient occlusion value.  
 `overlayColor`: equivalent to Iris's [`entityColor`](https://shaders.properties/current/reference/uniforms/rendering/#entitycolor).  

@@ -20,7 +20,7 @@ To improve this, Iris and the latest Minecraft snapshots use batching for entiti
 
 ### Materials
 
-Flywheel provides a [**material**](https://github.com/Engine-Room/Flywheel/blob/fdba7e66b45f884ff91b18b9e9abc8d2a9745d6b/common/src/api/java/dev/engine_room/flywheel/api/material/Material.java) system to mod developers, enabling them to fully customize how an instance in rendered. Mod developers may configure for example:
+Flywheel provides a [material](https://github.com/Engine-Room/Flywheel/blob/fdba7e66b45f884ff91b18b9e9abc8d2a9745d6b/common/src/api/java/dev/engine_room/flywheel/api/material/Material.java) system to mod developers, allowing them to fully customize how an instance in rendered. Mod developers may configure for example:
 - A vertex shader   
 - A fragment shader
 - A light shader
@@ -38,7 +38,7 @@ By itself, Flywheel does nothing as it's just a library. Here's a list of mods u
 
 - [Vanillin](https://modrinth.com/mod/flw-vanillin)
 - [Create](https://modrinth.com/mod/create/) (and associated addons)
-- [Valkries Skies 2](https://modrinth.com/mod/valkyrien-skies)
+- [Valkyrien Skies 2](https://modrinth.com/mod/valkyrien-skies)
 
 :::note
 Flywheel is not available directly on CurseForge or Modrinth. Instead, mods using it needs to bundle it in their .jar file.

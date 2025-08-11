@@ -23,7 +23,7 @@ The issue arises because translucent geometries are not sorted: the red glass is
 The typical solution to this issue is to sort geometries back-to-front relative to the camera, which is the method used by Iris. However, Flywheel does not sort translucent geometries. Instead, it uses Order Independent Transparency (OIT), which, as the name suggests, does not require geometries to be ordered on the CPU first.
 
 :::caution[Warning]
-Before proceding, you **should** read the explanation of [What is Order Independant Transparency ?](/colorwheel/colorwheel/whatis/oit).
+Before proceding, you **should** read the explanation of [What is Order Independant Transparency ?](/colorwheel/whatis/oit).
 :::
 
 ### Setup
@@ -142,6 +142,10 @@ When changing the default format used, make sure to assign a format with an alph
 
 :::tip
 If multiple buffers share the same alpha value, you can reuse the same **coefficients buffer**. This significantly reduces memory usage.
+:::
+
+:::tip
+If your're dealing with a deferred rendering pipeline, where managing translucency is more challenging, a compromise is to set all buffers to frontmost. This ensures that the final render is acceptable and allows you to achieve "good enough" tier results.
 :::
 
 ![](../../../../assets/tutorial/correct_red_oit.png)
