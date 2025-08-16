@@ -12,6 +12,10 @@ Instead, Flywheel uses an [Order Independant Transparency](https://en.wikipedia.
 
 This has the advantage of not requiring any sorting, but at the cost of more work on the GPU and an increase in memory usage.  
 
+:::caution[Warning]
+OIT is not supported on Apple Silicon and will be automatically disabled.
+:::
+
 ### Wavelet-Based OIT
 
 For a more detailed explanation, you may refer to the blog post, but here is a general overview:  
