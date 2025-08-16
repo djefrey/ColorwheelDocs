@@ -37,9 +37,9 @@ Valid ranks range from 1 to 3, with 3 being the recommended value. However, smal
 You may also configure the **accumulation buffers** texture format, which is `RGBA16F` by default. When doing so, make sure to use a  texture format with an alpha channel.  
 
 :::caution[Warning]
-When configuring the blending mode of the program used by the OIT, you are only modifying the blending settings for the final pass. The accumulation pass remains unchanged.
+In typical usage, it's common to omit `RENDERTARGETS` or `DRAWBUFFERS` in `shadow`. However, Colorwheel relies on these directives to identify which buffers are used. If they are not specified, it will default to only `shadowcolor0`. **Always specify one of these directives when `shadowcolor1` is used.**
 :::
 
-:::danger
-As of today, Colorwheel only supports `gl_FragColor` and `gl_FragData[i]`  for writing to buffers. If those are not used, Colorwheel will be unable to locate the fragment shader outputs which will results in the second and third pass failing to compile.
+:::caution[Warning]
+When configuring the blending mode of the program used by the OIT, you are only modifying the blending settings for the final pass. The accumulation pass remains unchanged.
 :::

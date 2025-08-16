@@ -34,77 +34,7 @@ By default, OIT is disabled and translucent geometries are rendered in whatever 
 oit = true
 ```
 
-This will enable OIT for both the `gbuffers` and `shadow` render passes. If we reload, we now have ...
-
-![](../../../../assets/tutorial/broken_oit.png)
-
-... a broken shaderpack !
-
-There are two issues currently:
-- We are using `layout(location = N) out vec4 ...`, which is not currently supported (only `gl_FragColor` and `gl_FragData` are supported as of today).
-- We haven't declared `DRAWBUFFERS` or `RENDERTARGETS` in `shadow.fsh`, so Colorwheel is unable to determine which buffers are used.
-
-Let's fix `clrwl_gbuffers.fsh`:
-
-```diff
-#version 330 compatibility
-
-uniform sampler2D lightmap;
-uniform sampler2D gtexture;
-
-in vec2 texcoord;
-in vec3 normal;
-
-/* RENDERTARGETS: 0,1,2 */
--layout(location = 0) out vec4 color;
--layout(location = 1) out vec4 lightmapData;
--layout(location = 2) out vec4 encodedNormal;
-
-void main() {
--    color = texture(gtexture, texcoord);
-+    vec4 color = texture(gtexture, texcoord);
-    vec2 lmcoord;
-    float ao;
-    vec4 overlayColor;
-
-    clrwl_computeFragment(color, color, lmcoord, ao, overlayColor);
-    color.rgb = mix(color.rgb, overlayColor.rgb, overlayColor.a);
-
--    lightmapData = vec4(lmcoord, 0.0, 1.0);
--    encodedNormal = vec4(normal * 0.5 + 0.5, 1.0);
-+    gl_FragData[0] = color;
-+    gl_FragData[1] = vec4(lmcoord, 0.0, 1.0);
-+    gl_FragData[2] = vec4(normal * 0.5 + 0.5, 1.0);
-}
-```
-
-And `clrwl_shadow.fsh`:
-
-```diff
-#version 330 compatibility
-
-uniform sampler2D gtexture;
-
-in vec2 texcoord;
-in vec4 glcolor;
-
--layout(location = 0) out vec4 color;
-+/* RENDERTARGETS: 0 */
-
-void main() {
--    color = texture(gtexture, texcoord);
-+    vec4 color = texture(gtexture, texcoord);
-    vec2 lmcoord;
-    float ao;
-    vec4 overlayColor;
-
-    clrwl_computeFragment(color, color, lmcoord, ao, overlayColor);
-+
-+    gl_FragData[0] = color;
-}
-```
-
-If we retry:
+This will enable OIT for both the `gbuffers` and `shadow` render passes. If we reload, we now have:
 
 ![](../../../../assets/tutorial/frontmost_red_oit.png)
 ![](../../../../assets/tutorial/frontmost_blue_oit.png)
@@ -158,4 +88,29 @@ The easiest way to handle shadows is to set all buffers to **frontmost**. This w
 ```
 oit.shadow.shadowcolor0 = frontmost
 oit.shadow.shadowcolor0.format = RGBA8
+```
+
+:::caution[Warning]
+In typical usage, it's common to omit `RENDERTARGETS` or `DRAWBUFFERS` in `shadow`. However, Colorwheel relies on these directives to identify which buffers are used. If they are not specified, it will default to only `shadowcolor0`. **Always specify one of these directives when `shadowcolor1` is used.**
+:::
+
+```diff
+#version 330 compatibility
+
+uniform sampler2D gtexture;
+
+in vec2 texcoord;
+in vec4 glcolor;
+
++/* RENDERTARGETS: 0 */
+layout(location = 0) out vec4 color;
+
+void main() {
+	color = texture(gtexture, texcoord);
+	vec2 lmcoord;
+	float ao;
+	vec4 overlayColor;
+
+	clrwl_computeFragment(color, color, lmcoord, ao, overlayColor);
+}
 ```
