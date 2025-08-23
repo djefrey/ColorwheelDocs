@@ -16,7 +16,7 @@ Colorwheel's extension consists of a set of programs that are merged with Flywhe
 
 [Iris/Oculus Flywheel Compat](https://modrinth.com/mod/iris-flw-compat) is an older mod that also makes shaderpacks "compatible" with Flywheel. It does so by generating patches on top of the `gbuffers_blocks` and `shadow` programs to insert Flywheel's vertex shader code.
 
-This approach was reasonable in Flywheel 0.6 (version using by Create 0.5) as Flywheel shaders were very basic (10 lines of codes). However, Flywheel 1.0 (used by Create 6) is way more complex:
+This approach was reasonable in Flywheel 0.6 (version using by Create 0.5) as Flywheel shaders were very basic (a few dozens lines of codes). However, Flywheel 1.0 (used by Create 6) is way more complex:
 
 - A **material** system where mod developers can specify how an instance is rendered (custom shaders, transparency mode, depth test, overlay usage, etc.)
 - Lighting is computed on the GPU for embedded environments (like Create contraptions)

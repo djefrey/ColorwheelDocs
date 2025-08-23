@@ -141,6 +141,17 @@ If we reload our shaderpack, we now have our shadows being rendered !
 
 ![](../../../../assets/tutorial/colored_shadow.png)
 
+:::tip
+For non Create players, here's how you can build a translucent contraption:  
+
+- Place two **cogwheels** upwards.
+- Place a **mechanical bearing** on one of the cogwheel, and a **hand crank** on to top of the other.
+- Place some **stained glass** on top of the mechanical bearing.
+- With a **super glue** in hand: right click on one corner of the stained glass wall, and right click on the opposite corner.
+- Look at the side of the mechanical bearing, hold right click and move your mouse to the right to select *Only Place when Anchor Destroyed*.
+- Right click on the hand crank.
+:::
+
 ### Stress test
 
 You might wonder why all this effort is necessary? What are the real benefits of doing all of this?
@@ -153,4 +164,8 @@ For reference, on my Steam Deck, the performance dropped from an average of 45 f
 
 We are now properly rendering opaque geometries, but Flywheel exposes more [transparency modes](https://github.com/Engine-Room/Flywheel/blob/dc5bc8e64976c69b38abb6965d5cd9033e5a8808/common/src/api/java/dev/engine_room/flywheel/api/material/Transparency.java).  
 
-Colorwheel provides more [programs](/colorwheel/reference/miscellaneous/programs/), one for each transparency mode. If the gbuffers program for a transparency mode doesn't exist, `clrwl_gbuffers` will be used instead while retaining their default blending mode. So make sure that every transparency mode will be rendered properly.
+Colorwheel provides more [programs](/colorwheel/reference/miscellaneous/programs/), one for each transparency mode. If the gbuffers program for a transparency mode doesn't exist, `clrwl_gbuffers` will be used instead while retaining their default blending mode. Make sure that every transparency mode will be rendered properly (this is especially true for shaderpacks using a deferred pipeline).
+
+:::tip
+As you can see, there's not a huge difference between Colorwheel programs and existing programs. The easiest way to support Colorwheel is to use `#define` to set a flag, then `#include` an existing program containing `#ifdef`s that include the Colorwheel code when required. This allows  you to keep Colorwheel shaders up to date with minimum effort.
+:::

@@ -45,12 +45,30 @@ If you recall the OIT explanation, it is mentioned that, by default, all buffers
 
 ### Gbuffers
 
-Let's do the inventory of our `colortex` used in `clrwl_gbuffers`, with their alpha value:
-- `colortex0`: `RGB16`, stores the color; alpha may vary.
-- `colortex1`: `RGBA8`, stores the lightmap; alpha set to 1.0 (opaque).
-- `colortex2`: `RGBA8`, stores the normal; alpha set to 1.0 (opaque).
+Let's do the inventory of our `colortex` used in `clrwl_gbuffers` with their alpha value:
+- `colortex0`: `RGB16`, blending enabled, alpha may vary.
+- `colortex1`: `RGBA8`, blending enabled, alpha set to 1.0.
+- `colortex2`: `RGBA8`, blending enabled, alpha set to 1.0.
 
-In summary: only `colortex0` is **blended**,`colortex1` and `colortex2` are **opaques**. What we need to do is declare a **coefficient buffer** and assign it to `colortex0`, and set `colortex1` and `colortex2` to **frontmost**. We can also set more suitable image formats to `colortex1` and `colortex2` than the default `RGBA16F`, as we don't need the 16-bit precision. A rank of 3 will be used for the coefficient buffer to provide a good precision level.  
+The `frontmost` mode has to be used in two cases:
+- When the alpha value is always 1.0 (the fragment is opaque).  
+- When the buffer written to has its blending disabled.  
+
+For non opaque fragment with blending enabled, we have to assign a **coefficient buffer** to generate and use the appropriate transmittance-over-depth function.  
+
+:::tip
+If multiple buffers share the same alpha value, you can reuse the same **coefficients buffer**. This significantly reduces memory usage.
+:::
+
+In summary:
+- `colortex0` is **non opaque** with **blending enabled**: declare and assign a **coefficient buffer**.
+- `colortex1` and `colortex2` are **opaques**: set them to `frontmost`.
+
+We can also assign more suitable image formats to `colortex1` and `colortex2` than the default `RGBA16F`, as we don't need the default 16-bit precision.  
+
+:::note
+If you're using one or two coefficients buffers, just use rank 3. In rare cases where more buffers are needed, you will have to reduce the ranks as you will reach the maximum framebuffer attachments on some systems.  
+:::
 
 ```
 oit = true
@@ -68,10 +86,6 @@ oit.gbuffers.colortex2.format = RGBA8
 
 :::caution[Warning]
 When changing the default format used, make sure to assign a format with an alpha channel.
-:::
-
-:::tip
-If multiple buffers share the same alpha value, you can reuse the same **coefficients buffer**. This significantly reduces memory usage.
 :::
 
 :::tip
