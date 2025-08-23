@@ -39,6 +39,7 @@ By itself, Flywheel does nothing as it's just a library. Here's a list of mods u
 - [Vanillin](https://modrinth.com/mod/flw-vanillin)
 - [Create](https://modrinth.com/mod/create/) (and associated addons)
 - [Valkyrien Skies 2](https://modrinth.com/mod/valkyrien-skies)
+- [Effortless Building](https://modrinth.com/mod/effortless-building)
 
 :::note
 Flywheel is not available directly on CurseForge or Modrinth. Instead, mods using it needs to bundle it in their .jar file.
