@@ -20,10 +20,9 @@ Some attributes are passed to the fragment stage, where they are being used by t
 - vertexNormal
 - vertexTangent
 
-In the geometry stage, those attributes are grouped in the interface blocks `clrwl_in[3]` and `clrwl_out`.
-
-:::tip
-Usage of `clrwl_out = clrwl_in[i];` when emitting a vertex in the geometry stage is highly recommended to be resilient in case of future updates.
+:::note
+In the geometry stage, those attributes are grouped in the interface blocks `clrwl_in[3]` and `clrwl_out`.  
+Use the [`clrwl_setVertexOut`](/colorwheel/reference/miscellaneous/functions/) function to set the correct values before emitting a vertex.  
 :::
 
 ### Remappings
