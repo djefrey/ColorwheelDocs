@@ -1,6 +1,6 @@
 ---
 title: vertexColor
-description: Overview of the clrwl_vertexColor inout
+description: Overview of the clrwl_vertexColor attribute
 sidebar:
     label: vertexColor
     order: 3

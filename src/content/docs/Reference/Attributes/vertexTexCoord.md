@@ -1,6 +1,6 @@
 ---
 title: vertexTexCoord
-description: Overview of the clrwl_vertexTexCoord inout
+description: Overview of the clrwl_vertexTexCoord attribute
 sidebar:
     label: vertexTexCoord
     order: 4
@@ -9,7 +9,7 @@ sidebar:
 ### `vec2 clrwl_vertexTexCoord;`
 
 **Sent to fragment**: YES  
-**Remaps**: `gl_MultiTexCoord0` (as `vec4(clrwl_vertexTexCoord, 0, 1)`)  
+**Remaps**: `gl_MultiTexCoord0`
 
 ---
 

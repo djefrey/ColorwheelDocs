@@ -1,9 +1,9 @@
 ---
 title: vertexNormal
-description: Overview of the clrwl_vertexNormal inout
+description: Overview of the clrwl_vertexNormal attribute
 sidebar:
     label: vertexNormal
-    order: 8
+    order: 7
 ---
 
 ### `vec3 clrwl_vertexNormal;`  

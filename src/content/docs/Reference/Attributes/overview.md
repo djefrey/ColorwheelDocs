@@ -38,7 +38,7 @@ Iris Attributes                             | Colorwheel Values
 `gl_MultiTexCoord0`                         | `vertexTexCoord`
 `gl_MultiTexCoord1` / `gl_MultiTexCoord2`   | `vertexLight`
 `gl_Normal`                                 | `vertexNormal`
+`mc_Entity`                                 | `vertexEntity`
+`mc_midTexCoord`                            | `vertexMidTexCoord`
 `at_tangent`                                | `vertexTangent`
 `at_midBlock`                               | `vertexMidMesh`
-`mc_midTexCoord`                            | `vertexMidTexCoord`
-`mc_Entity`                                 | `vec2(-1, -1)`

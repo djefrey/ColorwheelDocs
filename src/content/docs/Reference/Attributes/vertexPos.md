@@ -1,6 +1,6 @@
 ---
 title: vertexPos
-description: Overview of the clrwl_vertexPos inout
+description: Overview of the clrwl_vertexPos attribute
 sidebar:
     label: vertexPos
     order: 2

@@ -1,6 +1,6 @@
 ---
 title: vertexOverlay
-description: Overview of the clrwl_vertexOverlay inout
+description: Overview of the clrwl_vertexOverlay attribute
 sidebar:
     label: vertexOverlay
     order: 5

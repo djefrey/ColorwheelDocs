@@ -1,9 +1,9 @@
 ---
 title: vertexTangent
-description: Overview of the clrwl_vertexTangent inout
+description: Overview of the clrwl_vertexTangent attribute
 sidebar:
     label: vertexTangent
-    order: 9
+    order: 10
 ---
 
 ### `vec4 clrwl_vertexTangent;`
