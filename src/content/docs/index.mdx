@@ -14,3 +14,18 @@ hero:
       link: /colorwheel/guides/adapt-your-shaderpack/0_intro/
       icon: right-arrow
 ---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+import BannerImage from '../../components/BannerImage.astro'
+
+<BannerImage />
+
+<CardGrid stagger>
+	<Card title="Need help with shaders ?" icon="sun">
+    Join the [ShaderLabs Discord](https://discord.gg/RpzWN9S) !
+	</Card>
+	<Card title="Need help with Flywheel ?" icon="setting">
+    Join the [Engine-Room Discord](https://discord.gg/xjD59ThnXy) !
+	</Card>
+</CardGrid>
