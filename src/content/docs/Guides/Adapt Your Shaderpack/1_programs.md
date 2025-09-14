@@ -8,7 +8,7 @@ sidebar:
 
 ### Gbuffers
 
-The `clrwl_gbuffers` program is most important one, as Colorwheel will reject any shaderpack without it. You don't have to *reinvent the wheel* to create it, you may repurpose one of your existing program. In general, `gbuffers_blocks` serves as a good foundation. For this tutorial, I'll use `gbuffers_terrain` since the reference shaderpack doesn't include `gbuffers_blocks`.  
+The `clrwl_gbuffers` program is most important one, as Colorwheel will reject any shaderpack without it. You don't have to *reinvent the wheel* to create it, you may repurpose one of your existing program. `gbuffers_terrain` is a good starting point, but you might want to mix it with `gbuffers_blocks` and `gbuffers_entities` to support block entities and entities iPBR for example. 
 
 :::danger
 Colorwheel programs **must** use the `compatibility` profile.

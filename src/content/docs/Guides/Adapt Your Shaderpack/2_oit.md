@@ -89,7 +89,7 @@ When changing the default format used, make sure to assign a format with an alph
 :::
 
 :::tip
-If your're dealing with a deferred rendering pipeline, where managing translucency is more challenging, a compromise is to set all buffers to frontmost. This ensures that the final render is acceptable and allows you to achieve "good enough" tier results.
+If your're dealing with a deferred rendering pipeline which does not support translucent geometries, you can set all buffers to `frontmost`.
 :::
 
 ![](../../../../assets/tutorial/correct_red_oit.png)
