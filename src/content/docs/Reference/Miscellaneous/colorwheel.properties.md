@@ -43,7 +43,7 @@ Enable or disable the OIT.
 **• Coefficients Buffers:**
 
 ```
-blend.<program group>.coefficientRanks = <rank0>[,rank1][,rank2][,...]
+oit.<program group>.coefficientRanks = <rank0>[,rank1][,rank2][,...]
 ```
 
 Declares the coefficients ranks.  
@@ -53,7 +53,7 @@ Declares the coefficients ranks.
 **• Accumulation Buffers:**
 
 ```
-blend.<program group>.<buffer> = <coeffBufferID | frontmost>
+oit.<program group>.<buffer> = <coeffBufferID | frontmost>
 ```
 
 Sets the transparency mode of the accumulate buffer associated with the buffer.   
@@ -62,7 +62,7 @@ Sets the transparency mode of the accumulate buffer associated with the buffer.
 `coeffBufferID`: the index of the coefficient buffer declared with `coefficientRanks`.  
 
 ```
-blend.<program group>.<buffer>.format = <image format>
+oit.<program group>.<buffer>.format = <image format>
 ```
 
 Sets the texture format for the accumulate buffer associated with the buffer.   
