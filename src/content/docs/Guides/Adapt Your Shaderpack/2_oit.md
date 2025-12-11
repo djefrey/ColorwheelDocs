@@ -128,3 +128,8 @@ void main() {
 	clrwl_computeFragment(color, color, lmcoord, ao, overlayColor);
 }
 ```
+
+:::note
+OIT only works with Flywheel geometries. Translucent contraptions in front of water will cause rendering issues.  
+This is a known limitation that can't really be fixed.  
+:::

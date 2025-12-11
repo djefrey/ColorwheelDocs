@@ -12,6 +12,11 @@ Instead, Flywheel uses an [Order Independant Transparency](https://en.wikipedia.
 
 This has the advantage of not requiring any sorting, but at the cost of more work on the GPU and an increase in memory usage.  
 
+:::note
+OIT only works with Flywheel geometries. Translucent contraptions in front of water will cause rendering issues.  
+This is a known limitation that can't really be fixed.  
+:::
+
 :::caution[Warning]
 OIT is not supported on Apple Silicon and will be automatically disabled.
 :::
